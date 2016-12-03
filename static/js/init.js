@@ -2,7 +2,12 @@
   $(function(){
 
     $('.button-collapse').sideNav();
-    $(".modal").modal();
+    $("#detailView").modal({
+      ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+        console.log(modal, trigger);
+      }
+    });
+    $("#createView").modal();
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
