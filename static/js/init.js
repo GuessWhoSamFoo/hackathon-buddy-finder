@@ -55,11 +55,26 @@ window.onload = function () {
     }
 
     $("#addIdea").on('click', function () {
-      var formData = ideaForm.serialize();
+      var formData = JSON.stringify(ideaForm.serializeArray());
+      console.log(formData);
+
+      var data = {
+          creator_name: $('#creator_name').val(),
+          creator_role: $('#creator_role').val(),
+          project_name: $('#project_name').val(),
+          project_desc: $('#project_desc').val(),
+          position_one: $('#position_one').val(),
+          position_two: $('#position_two').val(),
+          spots: 2,
+          tags: $('#tags').val()
+        }
+
+        console.log(data);
+
       $.ajax({
           url: '/new',
           type: 'POST',
-          data: formData,
+          data: data,
           success: function(result) {
               console.log(result);
           } //end success function(result)
