@@ -33,4 +33,11 @@
 
 $(document).ready(function () {
     Materialize.updateTextFields();
+
+    var ideaForm = $("#ideaForm");
+
+    $("#addIdea").on('click', function () {
+      var formData = ideaForm.serialize();
+      console.log(formData);
+    });
 });
