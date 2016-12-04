@@ -29,6 +29,13 @@ def new():
     create_new_idea(creator_name, creator_role, project_name, project_desc, spots, tags, position_one, position_one_owner, position_two, position_two_owner)
     return ("", 204)
 
+@app.route('/join', methods=["POST"])
+def positions():
+    position_one_owner = request.form['position_one_owner']
+    position_two_owner = request.form['position_two_owner']
+    return ("", 204)
+
+
 #  Display just one entry
 @app.route('/ideas/<id>', methods=["GET"])
 def ideas_id(id):
