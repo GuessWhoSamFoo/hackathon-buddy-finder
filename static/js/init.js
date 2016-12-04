@@ -1,23 +1,5 @@
-(function($){
-  $(function(){
+window.onload = function () {
 
-    function getInitialPosts() {
-
-      return [
-        {
-          author: "Bogdan P",
-          project_name: "Uber For Fish",
-          project_desc: "Fish need to go places too!",
-          tags: [
-            "PHP",
-            "SQL"
-          ],
-          stops_left: 4
-        }
-      ];
-    }
-
-    var posts = getInitialPosts;
 
     $('.button-collapse').sideNav();
     $("#detailView").modal({
@@ -28,9 +10,18 @@
 
     $("#createView").modal();
 
-  }); // end of document ready
-})(jQuery); // end of jQuery name space
-
-$(document).ready(function () {
     Materialize.updateTextFields();
-});
+
+    $.get( "/ideas", function( data ) {
+      data.entries.forEach(function (idea) {
+        console.log(idea); // array of values
+      });
+    });
+
+    var ideaForm = $("#ideaForm");
+
+    $("#addIdea").on('click', function () {
+      var formData = ideaForm.serialize();
+      console.log(formData);
+    });
+};
