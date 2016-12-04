@@ -27,7 +27,17 @@ def new():
     position_two = request.form['position_two']
     position_two_owner = None
     create_new_idea(creator_name, creator_role, project_name, project_desc, spots, tags, position_one, position_one_owner, position_two, position_two_owner)
+<<<<<<< HEAD
+    return render_template("", 204)
+  
+@app.route('/join', methods=["POST"])  
+def positions():
+    position_one_owner = request.form['position_one_owner']
+    position_two_owner = request.form['position_two_owner']
+    return render_template("", 204)
+=======
     return ("", 204)
+>>>>>>> 74b0c161a325fe06ea75ffdc7a41c19618da05fc
 
 #  Display just one entry
 @app.route('/ideas/<id>', methods=["GET"])

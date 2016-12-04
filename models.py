@@ -35,14 +35,14 @@ def column_names():
     con.close()
     return names
     
-def key_pairs(list_of_columns, list_of_entries):
-    new_array = []
-    for entry in list_of_entries:
-        new_dict = {}
-        for index in range(len(list_of_columns)):
-            new_dict[list_of_columns[index][2]] = entry[index]
-        new_array.append(new_dict)
-    return new_array
+def join_idea(position_one_owner, position_two_owner):
+    con = sql.connect("database.db")
+    con.text_factory = str
+    cur = con.cursor()
+    cur.execute("INSERT INTO ideas()")
+    names = cur.fetchall()
+    con.close()
+    return names
     
 def dict_factory(cursor, row):
     d = {}
