@@ -10,7 +10,8 @@ def home():
 @app.route('/ideas', methods=["GET"])
 def ideas_list():
     entries = show_all_ideas()
-    return jsonify({ 'entries': entries} )
+    all_columns = column_names()
+    return jsonify({ 'entries': all_columns} )
 
 # Show a from for creating a new idea (new.html), post is creating a new entry in ideas table
 @app.route('/new', methods=["GET","POST"])
