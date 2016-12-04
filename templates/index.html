@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Hackathon Buddy Finder</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
+  <link href="../static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- JS -->
+    <script src="../static/js/init.js"></script>
+</head>
+<body>
+  <nav class="orange" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Hackathon Buddy Finder</a>
+      <ul class="right hide-on-med-and-down">
+        <li class="orange darken-3"><a href="#createView">Add Your Idea</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li class="orange darken-3"><a href="#createView">Add Your Idea</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <main class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <div id="ideas">
+        <div class="row">
+          <div class="col s12">
+            <div class="card blue-grey">
+              <a href="#detailView">
+                <div class="card-content white-text">
+                  <span class="card-title">Hackathon Project Name</span>
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                  I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                      <div class="chip">Website</div>
+                      <div class="chip">Pythom</div>
+                      <div class="chip">MySQL</div>
+                      <div class="chip orange white-text pull-right">2 Spots Remaining</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Team LeftOvers</h5>
+          <p class="grey-text text-lighten-4">We are a team of badasses working on this project to help people find their hackathon soulmates.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Creators</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/AaronDean" target="_blank">Aron</a></li>
+            <li><a class="white-text" href="https://github.com/cherchezlafemme" target="_blank">Anna</a></li>
+            <li><a class="white-text" href="https://github.com/GuessWhoSamFoo" target="_blank">Sam</a></li>
+            <li><a class="white-text" href="https://github.com/bpshonyak" target="_blank">Bogdan</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Resources</h5>
+          <ul>
+            <li><a class="white-text" href="http://materializecss.com/" target="_blank">Materialize</a></li>
+            <li><a class="white-text" href="http://flask.pocoo.org/" target="_blank">Flask</a></li>
+            <li><a class="white-text" href="https://github.com/GuessWhoSamFoo/hackathon-buddy-finder" target="_blank">GitHub Repo</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made at <a class="orange-text text-lighten-3" href="http://bchacks.com" target="_blank">BCHacks</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div id="detailView" class="modal">
+      <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Join Team</a>
+      </div>
+  </div>
+
+  <div id="createView" class="modal">
+      <div class="modal-content">
+          <form class="col s12" id="Porject_Creation">
+              <div class="row">
+                  <div class="input-field col s6">
+                      <input value="" id="Project_Lead1" type="text" class="validate">
+                      <label class="active" for="first_name2">Project Lead's Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                      <input value="" id="Project_Lead2" type="text" class="validate">
+                      <label class="active" for="first_name2">Project Lead's Roll</label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="input-field col s6">
+                      <input value="" id="Project_Name1" type="text" class="validate">
+                      <label class="active" for="first_name2">Project Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                      <input value="" id="Project_Description2" type="text" class="validate">
+                      <label class="active" for="first_name2">Project Description</label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="input-field col s6">
+                      <input value="" id="Position_Description1" type="text" class="validate">
+                      <label class="active" for="first_name2">Position One Description</label>
+                  </div>
+                  <div class="input-field col s6">
+                      <input value="" id="Position_Description2" type="text" class="validate">
+                      <label class="active" for="first_name2">Position Two Description</label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="input-field col s6">
+                      <input value="" id="Position_Description3" type="text" class="validate">
+                      <label class="active" for="first_name2">Position Three Description</label>
+                  </div>
+                  <div class="input-field col s6">
+                      <input value="" id="Position_Description4" type="text" class="validate">
+                      <label class="active" for="first_name2">Position Four Description</label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="input-field col s12">
+                      <input value="" id="Tags" type="text" class="validate">
+                      <label class="active" for="first_name2">Enter your project tags here.</label>
+                      <p id="Tag_Help">Please separate your tags with "#"</p>
+                  </div>
+              </div>
+            </form>
+</div>
+      <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Add Idea</a>
+      </div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../static/js/materialize.js"></script>
+  <script src="../static/js/init.js"></script>
+
+  </body>
+</html>

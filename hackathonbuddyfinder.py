@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'Hello World'
+    return render_template('index.html')
 
 # DISPLAY ALL THE IDEAS, uses ideas_list.html template currently
 @app.route('/ideas', methods=["GET"])
