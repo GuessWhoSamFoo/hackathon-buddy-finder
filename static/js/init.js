@@ -5,6 +5,7 @@ window.onload = function () {
     $("#detailView").modal({
       ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
         console.log(modal, trigger);
+
       }
     });
 
@@ -55,6 +56,13 @@ window.onload = function () {
 
     $("#addIdea").on('click', function () {
       var formData = ideaForm.serialize();
-      console.log(formData);
+      $.ajax({
+          url: '/new',
+          type: 'POST',
+          data: formData,
+          success: function(result) {
+              console.log(result);
+          } //end success function(result)
+        });
     });
 };
