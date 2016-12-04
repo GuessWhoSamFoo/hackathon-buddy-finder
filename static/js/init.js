@@ -1,11 +1,13 @@
 window.onload = function () {
 
+    var cachedEntries;
 
     $('.button-collapse').sideNav();
     $("#detailView").modal({
       ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
         console.log(modal, trigger);
-
+        var id = $(trigger).find(".idea_id");
+        console.log($(id).val());
       }
     });
 
@@ -16,6 +18,7 @@ window.onload = function () {
     $ideasContainer = $("#ideas");
 
     $.get( "/ideas", function( data ) {
+      cachedEntries = data;
       data.entries.forEach(function (idea) {
         var ideaHTML = generateIdeaRow(idea);
         $ideasContainer.append(ideaHTML);
@@ -35,6 +38,7 @@ window.onload = function () {
         });
 
         return `<div class="row">
+                <input class="idea_id" type="hidden" value="` + idea.id + `">
                   <div class="col s12">
                     <div class="card blue-grey">
                       <a href="#detailView">
