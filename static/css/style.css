@@ -6,6 +6,10 @@
  * Made By MaterializeCSS.com
  */
 
+ .brand-logo {
+   font-family: 'Oleo Script', cursive;
+ }
+
 .icon-block {
   padding: 0 15px;
 }
