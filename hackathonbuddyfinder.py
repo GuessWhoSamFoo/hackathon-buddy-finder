@@ -1,4 +1,4 @@
-from flask import Flask, g, render_template, request, redirect, url_for
+from flask import Flask, g, render_template, request, redirect, url_for, jsonify
 from models import *
 app = Flask(__name__)
 
@@ -10,18 +10,24 @@ def home():
 @app.route('/ideas', methods=["GET"])
 def ideas_list():
     entries = show_all_ideas()
-    return render_template("ideas_list.html", entries=entries)
+    return jsonify({ 'entries': entries} )
 
 # Show a from for creating a new idea (new.html), post is creating a new entry in ideas table
 @app.route('/new', methods=["GET","POST"])
 def new():
     if request.method == 'POST':
-        author = request.form['author']
-        title = request.form['title']
-        description = request.form['description']
-        max_num = request.form['max_num']
+        creator_name = request.form['creator_name']
+        creator_role = request.form['creator_role']
+        project_name = request.form['project_name']
+        project_desc = request.form['project_desc']
+        tags = request.form['tags']
+        spots = request.form['spots']
+        position_one = request.form['position_one']
+        position_one_owner = request.form['position_one_owner']
+        position_two = request.form['position_two']
+        position_two_owner = request.form['position_two_owner']
         # Adds new row to database
-        create_new_idea(author, title, description, max_num)
+        create_new_idea(creator_name, creator_role, project_name, project_desc, spots, tags, position_one, position_one_owner, position_two, position_two_owner)
         return redirect("/")
     return render_template("new.html")
 
