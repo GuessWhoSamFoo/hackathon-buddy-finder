@@ -34,3 +34,12 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+#detailview {
+
+}
+
+#Tag_Help{
+    font-size: 12px;
+    margin-top: -15px;
+}
