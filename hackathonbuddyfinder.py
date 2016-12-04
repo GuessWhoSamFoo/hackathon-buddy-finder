@@ -1,9 +1,6 @@
-from flask import Flask, g, render_template
+from flask import Flask, g, render_template, request, redirect, url_for
 from models import *
 app = Flask(__name__)
-
-def get_db():
-    db = getattr(g, '_database', None)
 
 @app.route('/')
 def home():
@@ -11,14 +8,19 @@ def home():
 
 @app.route('/ideas', methods=["GET"])
 def ideas_list():
-    return render_template("ideas_list.html")
+    entries = show_all_ideas()
+    return render_template("ideas_list.html", entries=entries)
     
-@app.route('/ideas/new', methods=["GET","POST"])
+@app.route('/new', methods=["GET","POST"])
 def new():
-    author = request.form['author']
-    title = request.form['title']
-    description = request.form['description']
-    max_num = request.form['max_num']
+    if request.method == 'POST':
+        author = request.form['author']
+        title = request.form['title']
+        description = request.form['description']
+        max_num = request.form['max_num']
+        # Adds new row to database
+        create_new_idea(author, title, description, max_num)
+        return redirect("/")
     return render_template("new.html")
     
 @app.route('/ideas/<id>', methods=["GET"])
