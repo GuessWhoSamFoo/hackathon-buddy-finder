@@ -7,7 +7,26 @@ window.onload = function () {
       ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
         console.log(modal, trigger);
         var id = $(trigger).find(".idea_id");
-        console.log($(id).val());
+
+        console.log(cachedEntries);
+
+        var entry = cachedEntries.find(function (obj) {
+            if (obj.id === 10) {
+                return true;
+            }
+        });
+
+        console.log(entry);
+
+        if (entry) {
+            $("#_project_name").text(entry.project_name);
+            $("#_creator_name").text(entry.creator_name);
+            $("#_project_desc").text(entry.project_desc);
+            // $("#_project_name").text(entry.project_name);
+            // $("#_project_name").text(entry.project_name);
+            // $("#_project_name").text(entry.project_name);
+        }
+
       }
     });
 
@@ -18,7 +37,7 @@ window.onload = function () {
     $ideasContainer = $("#ideas");
 
     $.get( "/ideas", function( data ) {
-      cachedEntries = data;
+      cachedEntries = data.entries;
       data.entries.forEach(function (idea) {
         var ideaHTML = generateIdeaRow(idea);
         $ideasContainer.append(ideaHTML);
