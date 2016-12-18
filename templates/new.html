@@ -1,0 +1,37 @@
+<html>
+   <body>
+      
+      <form action = {{ url_for("new") }} method = "POST">
+         <h3>Testing</h3>
+         Creator name<br>
+         <input type = "text" name = "creator_name" /></br>
+         Creator role<br>
+         <input type = "text" name = "creator_role" /></br>
+
+         Project name<br>
+         <input type = "text" name = "project_name" /></br>
+         
+         Project Description<br>
+         <textarea name = "project_desc" ></textarea><br>
+         
+         Spot<br>
+         <input type = "int" name = "spots" /><br>
+
+         Tags<br>
+         <input type = "text" name = "tags" /></br>
+
+         Position one<br>
+         <input type = "text" name = "position_one" /></br>
+         Position one<br>
+         <input type = "text" name = "position_one_owner" /></br>
+
+         Position two<br>
+         <input type = "text" name = "position_two" /></br>
+         Position two<br>
+         <input type = "text" name = "position_two_owner" /></br>
+
+         <input type = "submit" value = "submit" /><br>
+      </form>
+      
+   </body>
+</html>
