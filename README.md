@@ -17,11 +17,10 @@ During the Hackathon we practice paired programming and work in 2 pairs:
 ``` export FLASK_APP=hackathonbuddyfinder.py ```
 
 * Run the server on your machine:
-``` flask run ```  
-or 
-``` python -m flask run```
+``` flask run ```  or 
+``` python -m flask run ```
 
 * Visit your app at 
-```http://127.0.0.1:5000/```
+``` http://127.0.0.1:5000/ ```
 
 
